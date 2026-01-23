@@ -14,3 +14,4 @@ int main() {
     printf("The final price is: %f ",result);
   
     return 0;
+}
