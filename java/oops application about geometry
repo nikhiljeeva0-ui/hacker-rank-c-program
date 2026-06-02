@@ -6,7 +6,7 @@ abstract class  Shapes
   abstract void accptInput();
     abstract void compect();
     public void display(){
-      System.out.println("The area is : "+ area);
+    System.out.println("The area of  " + getClass().getSimpleName() + " is : "+ area);
     }
 }
 
