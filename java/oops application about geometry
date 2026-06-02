@@ -1,0 +1,80 @@
+import java.util.*;
+
+abstract class  Shapes
+{
+  float area;
+  abstract void accptInput();
+    abstract void compect();
+    public void display(){
+      System.out.println("The area is : "+ area);
+    }
+}
+
+
+class Square extends Shapes
+{
+   private float length;
+  public void accptInput(){
+    Scanner scan = new Scanner(System.in);
+    System.out.println("Enter the length of the Square : ");
+    this.length = scan.nextFloat();
+  }
+  public void compect(){
+    area = length * length ;
+  }
+}
+class Rectangle extends Shapes
+{
+  private float length;
+   private float breadth;
+  public void accptInput(){
+    Scanner scan = new Scanner(System.in);
+    System.out.println("Enter the length of the Rectangle : ");
+    this.length = scan.nextFloat();
+        System.out.println("Enter the breadth of the Rectangle : ");
+    this.breadth = scan.nextFloat();
+  }
+  public void compect(){
+    area = length * breadth ;
+  }
+}
+
+class Circle extends Shapes
+{
+  private float r;
+  public void accptInput(){
+    Scanner scan = new Scanner(System.in);
+    System.out.println("Enter the radius of the Circle : ");
+    this.r = scan.nextFloat();
+  }
+  public void compect(){
+    area = r * r * 3.141f;
+  }
+}
+
+
+class Geometry
+{
+  public void premits(Shapes ref){
+    ref.accptInput();
+     ref.compect();
+     ref.display();
+     
+  }
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+     Square  s = new Square();
+     Rectangle R  = new Rectangle();
+     Circle C = new Circle();
+     Geometry G = new Geometry();
+     G.premits(s);
+     System.out.println("*************************************");
+         G.premits(R);
+            System.out.println("*************************************");
+             G.premits(C);
+      
+    }
+}
